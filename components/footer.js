@@ -1,7 +1,10 @@
+import styles from './footer.module.css';
+
 export default function Footer() {
     return ( 
-        <div className="footer">
-            <h1>푸터입니다.</h1>
+        <div className={styles.footer}>
+            <p>Contact Here</p>
+            <p>Jeonghun.seo@outlook.kr</p>
         </div>
     )
 }
