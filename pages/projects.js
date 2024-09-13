@@ -2,11 +2,9 @@ import Grid from '@mui/material/Grid2';
 import Layout from "../components/layout"
 import Head from "next/head";
 import { TOKEN, DATABASE_ID } from "../config";
-import ProjectItem from "../components/projects/project-item";
+import ProjectItem from '@/components/projects/project-item';";
 
 export default function Projects({ projects }) {
-  console.log(projects);
-
   return (
     <>
       <Layout>
@@ -17,7 +15,7 @@ export default function Projects({ projects }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <h1>프로젝트</h1>
-        <span>총 프로젝트 : 3</span>
+        <span>총 프로젝트 : {projects.results.length}</span>
         <Grid container spacing={3}>
           {projects.results.map((aProject) => (
             <ProjectItem key={aProject.id} data={aProject}/>
