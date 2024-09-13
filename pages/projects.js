@@ -17,7 +17,7 @@ export default function Projects({ projects }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <h1>프로젝트</h1>
-        <span>총 프로젝트 : {projects.results.length}</span>
+        <span>총 프로젝트 : 3</span>
         <Grid container spacing={3}>
           {projects.results.map((aProject) => (
             <ProjectItem key={aProject.id} data={aProject}/>
