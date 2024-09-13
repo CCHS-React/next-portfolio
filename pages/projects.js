@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid2';
 import Layout from "../components/layout"
 import Head from "next/head";
 import { TOKEN, DATABASE_ID } from "../config";
-import ProjectItem from '@/components/projects/project-item';"
+import ProjectItem from '@/components/projects/project-item';
 
 export default function Projects({ projects }) {
   return (
