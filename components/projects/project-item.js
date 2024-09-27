@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {useRouter} from 'next/router';
 
+import styles from './project-item.module.css'
+
 export default function ProjectItem({data}) {
     const title = data.properties.이름.title[0]?.plain_text;
     const tags = data.properties.태그.multi_select;
@@ -13,9 +15,9 @@ export default function ProjectItem({data}) {
     const end = data.properties?.작업기간.date.end;
     const description = data.properties?.설명.rich_text[0].plain_text;
     const github = data.properties?.Github.url;
-    const imgSrc = data.cover.file?.url || data.cover.external.url;
     const demo = data.properties?.Demo.url;
-    console.log(demo);
+    const imgUrl = data.properties?.Image.url;
+
     const router = useRouter();
 
     function countWorkDays(start,end) {
@@ -34,8 +36,8 @@ export default function ProjectItem({data}) {
     
     const workDay = countWorkDays(start,end)
     return (
-      <Card sx={{ width: 345, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-      <CardMedia sx={{ height: 300 }} image={imgSrc} title={title} />
+      <Card className={styles.cardItem} sx={{ width: 345, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      <CardMedia sx={{ height: 300 }} image={imgUrl} title={title} />
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h5" component="div">
           {title}
